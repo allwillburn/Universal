@@ -219,7 +219,7 @@ OnTick(function (myHero)
              
             
 
-          end
+         
 
          --AUTO IGNITE
 	for _, enemy in pairs(GetEnemyHeroes()) do
