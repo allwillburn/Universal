@@ -182,7 +182,7 @@ OnTick(function (myHero)
             
             elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then 
                          CastSpell(_Q)                  
-                end
+               
                
               
 
