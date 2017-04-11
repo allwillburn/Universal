@@ -197,13 +197,13 @@ OnTick(function (myHero)
 	    
             elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
 			CastSpell(_W) 
-	       end
+	       
               
              
-            end
+            
 	    
 	    	 
-	    if UniversalMenu.Combo.W:Value() and Ready(_R) and ValidTarget(target, RRange) then
+	    elseif UniversalMenu.Combo.W:Value() and Ready(_R) and ValidTarget(target, RRange) then
 			CastSkillShot(_R, target)
 	    
             elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, RRange) then
@@ -215,9 +215,9 @@ OnTick(function (myHero)
             elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, RRange) then
 			CastSpell(_R) 
 	       end
-              end
-             end
-            end
+              
+             
+            
 
           end
 
