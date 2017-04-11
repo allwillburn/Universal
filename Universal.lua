@@ -138,6 +138,19 @@ OnTick(function (myHero)
             if UniversalMenu.Combo.Cutlass:Value() and Cutlass > 0 and Ready(Cutlass) and ValidTarget(target, 700) then
 			 CastTargetSpell(target, Cutlass)
             end
+			
+	    	 if UniversalMenu.Combo.Tiamat:Value() and Tiamat > 0 and Ready(Tiamat) and ValidTarget(target, 350) then
+			CastSpell(Tiamat)
+            end
+
+            if UniversalMenu.Combo.Gunblade:Value() and Gunblade > 0 and Ready(Gunblade) and ValidTarget(target, 700) then
+			CastTargetSpell(target, Gunblade)
+            end
+
+            if UniversalMenu.Combo.RHydra:Value() and RHydra > 0 and Ready(RHydra) and ValidTarget(target, 400) then
+			CastSpell(RHydra)
+            end
+	
 
             if UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) then
 			CastTargetSpell(target,_E)
@@ -170,28 +183,10 @@ OnTick(function (myHero)
             elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then 
                          CastSpell(_Q)                  
                 end
-               end
-              end
-             end
+               
+              
 
-
- 
-            if UniversalMenu.Combo.Tiamat:Value() and Tiamat > 0 and Ready(Tiamat) and ValidTarget(target, 350) then
-			CastSpell(Tiamat)
-            end
-
-            if UniversalMenu.Combo.Gunblade:Value() and Gunblade > 0 and Ready(Gunblade) and ValidTarget(target, 700) then
-			CastTargetSpell(target, Gunblade)
-            end
-
-            if UniversalMenu.Combo.RHydra:Value() and RHydra > 0 and Ready(RHydra) and ValidTarget(target, 400) then
-			CastSpell(RHydra)
-            end
-
-
-
-
-	    if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
+	    elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
 			CastSkillShot(_W, target)
 	    
             elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
@@ -203,8 +198,8 @@ OnTick(function (myHero)
             elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
 			CastSpell(_W) 
 	       end
-              end
-             end
+              
+             
             end
 	    
 	    	 
