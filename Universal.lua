@@ -30,7 +30,7 @@ GetWebResultAsync("https://raw.githubusercontent.com/allwillburn/Universal/maste
 GetLevelPoints = function(unit) return GetLevel(unit) - (GetCastLevel(unit,0)+GetCastLevel(unit,1)+GetCastLevel(unit,2)+GetCastLevel(unit,3)) end
 local SetDCP, SkinChanger = 0
 
-l
+
 local UniversalMenu = Menu("Universal", "Universal")
 
 UniversalMenu:SubMenu("Combo", "Combo")
