@@ -157,7 +157,7 @@ OnTick(function (myHero)
 
 
 
-            if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then
+            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then
 		     if target ~= nil then 
                          CastSkillShot(_Q, target)
                      end
