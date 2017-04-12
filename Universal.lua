@@ -214,6 +214,8 @@ OnTick(function (myHero)
             elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, RRange) then
 			CastSpell(_R) 
 	       end
+           end
+			
               
              
             
