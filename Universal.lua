@@ -326,7 +326,7 @@ OnTick(function (myHero)
         if UniversalMenu.Farm.E:Value() and Ready(_E) and ValidTarget(minion, ERange) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastTargetSpell(minion,_E)
         end
-        if UniversalMenu.Farm.W:Value() and Ready(_E) and ValidTarget(minion, WRange) and GetCurrentHP(minion) < getdmg("W",minion) then 
+        if UniversalMenu.Farm.W:Value() and Ready(_W) and ValidTarget(minion, WRange) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastTargetSpell(minion,_W)
         end
 			
