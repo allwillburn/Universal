@@ -161,7 +161,7 @@ OnTick(function (myHero)
 			CastSkillShot(_E, target)
             elseif UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) then
 			CastTargetSpell(_E, target)
-	        end
+	        
                
                
              
