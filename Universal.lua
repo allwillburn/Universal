@@ -80,8 +80,7 @@ UniversalMenu.KillSteal:Boolean("R", "KS w R", true)
 UniversalMenu:SubMenu("AutoIgnite", "AutoIgnite")
 UniversalMenu.AutoIgnite:Boolean("Ignite", "Ignite if killable", true)
 
-UniversalMenu:SubMenu("Drawings", "Drawings")
-UniversalMenu.Drawings:Boolean("DQ", "Draw Q Range", true)
+
 
 UniversalMenu:SubMenu("SkinChanger", "SkinChanger")
 UniversalMenu.SkinChanger:Boolean("Skin", "UseSkinChanger", true)
@@ -340,13 +339,7 @@ OnTick(function (myHero)
 end)
 
 
-OnDraw(function (myHero)
-        
-         if UniversalMenu.Drawings.DQ:Value() then
-		DrawCircle(GetOrigin(myHero), QRange, 0, 200, GoS.Red)
-	end
 
-end)
 
 
 OnProcessSpell(function(unit, spell)
