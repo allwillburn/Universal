@@ -332,8 +332,7 @@ OnTick(function (myHero)
 	if UniversalMenu.Farm.AA:Value() and ValidTarget(minion, 175) and GetCurrentHP(minion) < CalcDamage(myHero,minion,AADmg,AA) then
             AttackUnit(minion)
         end	
-			
-		   	
+	end   	
        end
     end	
 end)
