@@ -10,7 +10,7 @@ end
 
 
 
-
+require("DeftLib")
 require("OpenPredict")
 require("DamageLib")
 
@@ -99,11 +99,7 @@ OnTick(function (myHero)
         local BaseAD = GetBaseDamage(myHero)
 	local BonusAP = GetBonusDmg(myHero)
         local BaseAP = GetBaseDamage(myHero)
-	local QRange = GetRange(myHero, _Q)
-	local WRange = GetRange(myHero, _W)
-	local ERange = GetRange(myHero, _E)	
-        local RRange = GetRange(myHero, _R)
-
+	
 	--AUTO LEVEL UP
 	if UniversalMenu.AutoMode.Level:Value() then
 
