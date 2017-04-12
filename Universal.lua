@@ -333,8 +333,8 @@ OnTick(function (myHero)
             AttackUnit(minion)
         end	
 	end   	
-       end
-    end	
+       
+   
 end)
 
 
