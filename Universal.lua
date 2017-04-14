@@ -148,6 +148,10 @@ OnTick(function (myHero)
             if UniversalMenu.Combo.RHydra:Value() and RHydra > 0 and Ready(RHydra) and ValidTarget(target, 400) then
 			CastSpell(RHydra)
             end
+			
+			
+			
+			
 	
 
             if UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
@@ -173,7 +177,9 @@ OnTick(function (myHero)
              
             
 
-
+            if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+			CastSpell(_W) 
+	    end
 
             if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 		     if target ~= nil then 
