@@ -264,12 +264,12 @@ OnTick(function (myHero)
 
       if Mix:Mode() == "LaneClear" then
       	  for _,closeminion in pairs(minionManager.objects) do
-	        if UniversalMenu.LaneClear.Q:Value() and Ready(_Q) and ValidTarget(minion, QRange) then
+	        if UniversalMenu.LaneClear.Q:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
 	        	CastSkillShot(_Q, minion)
                 end
 
 
-                if UniversalMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(minion, ERange) then
+                if UniversalMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
 	        	CastTargetSpell(minion, _E)
 	        end
 
