@@ -168,32 +168,32 @@ OnTick(function (myHero)
 
 
 
-            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then
+            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 		     if target ~= nil then 
                          CastSkillShot(_Q, target)
                      end
             
-            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then 
+            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
                          CastTargetSpell(target, _Q)
-            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then 
+            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
                          CastTargetSpell(_Q, target)                     
             
-            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then 
+            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
                          CastSpell(_Q)                  
                
                
               
 
-	    elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
+	    elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSkillShot(_W, target)
 	    
-            elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
+            elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastTargetSpell(target, _W)
 	    
-            elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
+            elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastTargetSpell(_W, target)
 	    
-            elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
+            elseif UniversalMenu.Combo.W:Value() and Ready(_W) and (target, GetCastRange(myHero,_W)) then
 			CastSpell(_W) 
 	       
               
@@ -201,16 +201,16 @@ OnTick(function (myHero)
             
 	    
 	    	 
-	    elseif UniversalMenu.Combo.W:Value() and Ready(_R) and ValidTarget(target, RRange) then
+	    elseif UniversalMenu.Combo.W:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastSkillShot(_R, target)
 	    
-            elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, RRange) then
+            elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastTargetSpell(target, _R)
 	    
-            elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, RRange) then
+            elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastTargetSpell(_R, target)
 	    
-            elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, RRange) then
+            elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastSpell(_R) 
 	       end
            end
