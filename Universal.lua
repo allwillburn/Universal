@@ -160,6 +160,8 @@ OnTick(function (myHero)
 			CastSkillShot(_E, target)
             elseif UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastTargetSpell(_E, target)
+	    elseif UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
+			CastSkillShot(_E, target.pos)		
 	        
                
                
@@ -179,7 +181,11 @@ OnTick(function (myHero)
                          CastTargetSpell(_Q, target)                     
             
             elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
-                         CastSpell(_Q)                  
+                         CastSpell(_Q)   
+            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
+			CastSkillShot(_Q, target.pos)		
+				
+				
                
                
               
@@ -195,6 +201,8 @@ OnTick(function (myHero)
 	    
             elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSpell(_W) 
+	    elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+			CastSkillShot(_W, target.pos)			
 	       
               
              
@@ -212,6 +220,8 @@ OnTick(function (myHero)
 	    
             elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastSpell(_R) 
+	    	elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
+			CastSkillShot(_R, target.pos)		
 	       end
            end
 			
