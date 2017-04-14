@@ -329,18 +329,18 @@ OnTick(function (myHero)
     for _, minion in pairs(minionManager.objects) do
 			
 			   	
-        if UniversalMenu.Farm.Q:Value() and Ready(_Q) and ValidTarget(minion, QRange) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
+        if UniversalMenu.Farm.Q:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
             CastSkillShot(_Q, minion)
         end
 			
-        if UniversalMenu.Farm.E:Value() and Ready(_E) and ValidTarget(minion, ERange) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        if UniversalMenu.Farm.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastTargetSpell(minion,_E)
         end
-        if UniversalMenu.Farm.W:Value() and Ready(_W) and ValidTarget(minion, WRange) and GetCurrentHP(minion) < getdmg("W",minion) then 
+        if UniversalMenu.Farm.W:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastTargetSpell(minion,_W)
         end
 			
-	if UniversalMenu.Farm.AA:Value() and ValidTarget(minion, 175) and GetCurrentHP(minion) < CalcDamage(myHero,minion,AADmg,AA) then
+	if UniversalMenu.Farm.AA:Value() and ValidTarget(minion, GetCastRange(myHero,AA)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,AADmg,AA) then
             AttackUnit(minion)
         end	
 	end   	
