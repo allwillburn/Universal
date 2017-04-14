@@ -61,7 +61,7 @@ UniversalMenu:SubMenu("Farm", "Farm")
 UniversalMenu.Farm:Boolean("E", "AutoE", true)
 UniversalMenu.Farm:Boolean("W", "AutoW", true)
 UniversalMenu.Farm:Boolean("Q", "AutoQ", true)
-UniversalMenu.Farm:Boolean("AA", "AutoAA", true)
+
 
 UniversalMenu:SubMenu("LaneClear", "LaneClear")
 UniversalMenu.LaneClear:Boolean("Q", "Use Q", true)
@@ -354,9 +354,7 @@ OnTick(function (myHero)
             CastTargetSpell(minion,_W)
         end
 			
-	if UniversalMenu.Farm.AA:Value() and ValidTarget(minion, GetCastRange(myHero,AA)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,AADmg,AA) then
-            AttackUnit(minion)
-        end	
+		
 	end   	
        
    
