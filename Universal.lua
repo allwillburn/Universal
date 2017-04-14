@@ -153,7 +153,11 @@ OnTick(function (myHero)
 			
 	    if UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastTargetSpell(target, _R)
-	    end			
+	    end	
+			
+	    if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
+                         CastTargetSpell(target, _Q)
+	    end		
 	    	
 	    if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSpell(_W) 
