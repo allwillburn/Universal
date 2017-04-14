@@ -199,16 +199,14 @@ OnTick(function (myHero)
                
                
               
-
+             if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+			CastTargetSpell(target, _W)
+	    end
+			
 	    if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSkillShot(_W, target)
 	    end			 
-	    
-            if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
-			CastTargetSpell(target, _W)
-	    end			
-	    			
-	    
+	              				    
             if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSpell(_W) 
 	    end
