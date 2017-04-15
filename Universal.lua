@@ -1,4 +1,4 @@
-local ver = "0.02"
+local ver = "0.03"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -35,10 +35,26 @@ local UniversalMenu = Menu("Universal", "Universal")
 
 UniversalMenu:SubMenu("Combo", "Combo")
 
-UniversalMenu.Combo:Boolean("Q", "Use Q in combo", true)
-UniversalMenu.Combo:Boolean("W", "Use W in combo", true)
-UniversalMenu.Combo:Boolean("E", "Use E in combo", true)
-UniversalMenu.Combo:Boolean("R", "Use R in combo", true)
+UniversalMenu.Combo:Boolean("Q1", "Use Q1 in combo", true)
+UniversalMenu.Combo:Boolean("Q2", "Use Q2 in combo", false)
+UniversalMenu.Combo:Boolean("Q3", "Use Q3 in combo", false)
+UniversalMenu.Combo:Boolean("Q4", "Use Q4 in combo", false)
+
+UniversalMenu.Combo:Boolean("W1", "Use W1 in combo", true)
+UniversalMenu.Combo:Boolean("W2", "Use W2 in combo", false)
+UniversalMenu.Combo:Boolean("W3", "Use W3 in combo", false)
+UniversalMenu.Combo:Boolean("W4", "Use W4 in combo", false)
+
+UniversalMenu.Combo:Boolean("E1", "Use E1 in combo", true)
+UniversalMenu.Combo:Boolean("E2", "Use E2 in combo", false)
+UniversalMenu.Combo:Boolean("E3", "Use E3 in combo", false)
+UniversalMenu.Combo:Boolean("E4", "Use E4 in combo", false)
+
+UniversalMenu.Combo:Boolean("R1", "Use R1 in combo", true)
+UniversalMenu.Combo:Boolean("R2", "Use R2 in combo", false)
+UniversalMenu.Combo:Boolean("R3", "Use R3 in combo", false)
+UniversalMenu.Combo:Boolean("R4", "Use R4 in combo", false)
+
 UniversalMenu.Combo:Slider("RX", "X Enemies to Cast R",3,1,5,1)
 UniversalMenu.Combo:Boolean("Cutlass", "Use Cutlass", true)
 UniversalMenu.Combo:Boolean("Tiamat", "Use Tiamat", true)
@@ -79,6 +95,11 @@ UniversalMenu.KillSteal:Boolean("R", "KS w R", true)
 
 UniversalMenu:SubMenu("AutoIgnite", "AutoIgnite")
 UniversalMenu.AutoIgnite:Boolean("Ignite", "Ignite if killable", true)
+
+GalioMenu:SubMenu("1=tgt2=spel3=skl4=.pos", "1=tgt2=spel3=skl4=.pos")
+
+
+
 
 
 
@@ -148,108 +169,107 @@ OnTick(function (myHero)
             if UniversalMenu.Combo.RHydra:Value() and RHydra > 0 and Ready(RHydra) and ValidTarget(target, 400) then
 			CastSpell(RHydra)
             end
-			
-			
-			
-	    if UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
-			CastTargetSpell(target, _R)
-	    end	
-			
-	    if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
-                         CastTargetSpell(target, _Q)
-	    end		
-	    	
-	    if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
-			CastSpell(_W) 
-	    end
 
-            if UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
+
+
+			
+			
+		
+	    
+
+            if UniversalMenu.Combo.E1:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastTargetSpell(target,_E)
 	    end			
 	    
-            if UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
+            if UniversalMenu.Combo.E2:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastSpell(_E)
 	    end			
 	    
-            if UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
+            if UniversalMenu.Combo.E3:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastSkillShot(_E, target)
 	    end
 			
             
 			
-	    if UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
+	    if UniversalMenu.Combo.E4:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastSkillShot(_E, target.pos)	
 	    end			
 	        
                
+
+
                
              
             
 
-            if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
-			CastSpell(_W) 
-	    end
+            
 
-            if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
+            if UniversalMenu.Combo.Q1:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 		     if target ~= nil then 
                          CastSkillShot(_Q, target)
                      end
 	    end			
             
-            if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
+            if UniversalMenu.Combo.Q2:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
                          CastTargetSpell(target, _Q)
 	    end
 			
             		
             
-            if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
+            if UniversalMenu.Combo.Q3:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
                          CastSpell(_Q)   
 	    end	
 			
-            if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
+            if UniversalMenu.Combo.Q4:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 			CastSkillShot(_Q, target.pos)	
 	    end			
-				
+		
+
+
+
+
+		
 				
                
-               
+            if UniversalMenu.Combo.W1:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+			CastSkillShot(_W, target)
+	    end	
               
-             if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+            if UniversalMenu.Combo.W2:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastTargetSpell(target, _W)
 	    end
 			
-	    if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
-			CastSkillShot(_W, target)
-	    end			 
-	              				    
-            if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+	           				    
+            if UniversalMenu.Combo.W3:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSpell(_W) 
 	    end
 			
-	    if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+	    if UniversalMenu.Combo.W4:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSkillShot(_W, target.pos)	
 	    end			
 	       
               
              
+
+
             
 	    
 	    	 
-	    if UniversalMenu.Combo.W:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
+	    if UniversalMenu.Combo.R1:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastSkillShot(_R, target)
 	    end			
 	    
-            if UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
+            if UniversalMenu.Combo.R2:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastTargetSpell(target, _R)
 	    end			
 	    
             			
 	    
-            if UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
+            if UniversalMenu.Combo.R3:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastSpell(_R) 
 	    end
 			
-	    if UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
+	    if UniversalMenu.Combo.R4:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastSkillShot(_R, target.pos)		
 	       end
            end
@@ -257,6 +277,8 @@ OnTick(function (myHero)
               
              
             
+
+
 
          
 
@@ -282,6 +304,9 @@ OnTick(function (myHero)
 
 	end
 
+
+
+
         for _, enemy in pairs(GetEnemyHeroes()) do
                 
                 if IsReady(_Q) and ValidTarget(enemy, QRange) and UniversalMenu.KillSteal.Q:Value() and GetHP(enemy) < getdmg("Q",enemy) then
@@ -300,6 +325,9 @@ OnTick(function (myHero)
   
                 end
       end
+
+
+
 
       if Mix:Mode() == "LaneClear" then
       	  for _,closeminion in pairs(minionManager.objects) do
@@ -321,6 +349,9 @@ OnTick(function (myHero)
       	        end
           end
       end
+
+
+
         --AutoMode
         if UniversalMenu.AutoMode.Q:Value() then        
           if Ready(_Q) and ValidTarget(target, QRange) then
@@ -352,6 +383,8 @@ OnTick(function (myHero)
 			CastSpell(Summoner_2)
 		end
 	end
+
+
 
 
 --Auto E on minions
