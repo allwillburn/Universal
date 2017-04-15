@@ -96,7 +96,7 @@ UniversalMenu.KillSteal:Boolean("R", "KS w R", true)
 UniversalMenu:SubMenu("AutoIgnite", "AutoIgnite")
 UniversalMenu.AutoIgnite:Boolean("Ignite", "Ignite if killable", true)
 
-GalioMenu:SubMenu("1=tgt2=spel3=skl4=.pos", "1=tgt2=spel3=skl4=.pos")
+UniversalMenu:SubMenu("1=tgt2=spel3=skl4=.pos", "1=tgt2=spel3=skl4=.pos")
 
 
 
