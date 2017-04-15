@@ -1,4 +1,4 @@
-local ver = "0.04"
+local ver = "0.05"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -68,20 +68,34 @@ UniversalMenu.Combo:Boolean("Randuins", "Use Randuins", true)
 UniversalMenu:SubMenu("AutoMode", "AutoMode")
 UniversalMenu.AutoMode:Boolean("Level", "Auto level spells", false)
 UniversalMenu.AutoMode:Boolean("Ghost", "Auto Ghost", false)
-UniversalMenu.AutoMode:Boolean("Q", "Auto Q", false)
-UniversalMenu.AutoMode:Boolean("W", "Auto W", false)
-UniversalMenu.AutoMode:Boolean("E", "Auto E", false)
-UniversalMenu.AutoMode:Boolean("R", "Auto R", false)
+UniversalMenu.AutoMode:Boolean("Q1", "Auto Q1", false)
+UniversalMenu.AutoMode:Boolean("W1", "Auto W1", false)
+UniversalMenu.AutoMode:Boolean("E1", "Auto E1", false)
+UniversalMenu.AutoMode:Boolean("R1", "Auto R1", false)
 
 UniversalMenu:SubMenu("Farm", "Farm")
-UniversalMenu.Farm:Boolean("E", "AutoE", true)
-UniversalMenu.Farm:Boolean("W", "AutoW", true)
-UniversalMenu.Farm:Boolean("Q", "AutoQ", true)
+UniversalMenu.Farm:Boolean("E1", "AutoE1", true)
+UniversalMenu.Farm:Boolean("E2", "AutoE2", true)
+UniversalMenu.Farm:Boolean("E3", "AutoE3", true)
+
+
+UniversalMenu.Farm:Boolean("W1", "AutoW1", true)
+UniversalMenu.Farm:Boolean("W2", "AutoW2", true)
+UniversalMenu.Farm:Boolean("W3", "AutoW3", true)
+
+
+UniversalMenu.Farm:Boolean("Q1", "AutoQ1", true)
+UniversalMenu.Farm:Boolean("Q1", "AutoQ2", true)
+UniversalMenu.Farm:Boolean("Q1", "AutoQ3", true)
+
 
 
 UniversalMenu:SubMenu("LaneClear", "LaneClear")
 UniversalMenu.LaneClear:Boolean("Q", "Use Q", true)
+UniversalMenu.LaneClear:Boolean("W", "Use W", true)
 UniversalMenu.LaneClear:Boolean("E", "Use E", true)
+
+
 UniversalMenu.LaneClear:Boolean("RHydra", "Use RHydra", true)
 UniversalMenu.LaneClear:Boolean("Tiamat", "Use Tiamat", true)
 
@@ -176,6 +190,9 @@ OnTick(function (myHero)
 			
 		
 	    
+            if UniversalMenu.Combo.E3:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
+			CastSkillShot(_E, target)
+	    end
 
             if UniversalMenu.Combo.E1:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastTargetSpell(target,_E)
@@ -185,12 +202,7 @@ OnTick(function (myHero)
 			CastSpell(_E)
 	    end			
 	    
-            if UniversalMenu.Combo.E3:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
-			CastSkillShot(_E, target)
-	    end
-			
-            
-			
+            	        			
 	    if UniversalMenu.Combo.E4:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastSkillShot(_E, target.pos)	
 	    end			
@@ -391,16 +403,56 @@ OnTick(function (myHero)
     for _, minion in pairs(minionManager.objects) do
 			
 			   	
-        if UniversalMenu.Farm.Q:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
+        if UniversalMenu.Farm.Q1:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
             CastSkillShot(_Q, minion)
         end
+
+        if UniversalMenu.Farm.Q2:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
+             CastTargetSpell(minion, _Q)
+        end
+  
+        if UniversalMenu.Farm.Q3:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
+            CastSpell(_Q)
+        end
+     
+
+    
+
 			
-        if UniversalMenu.Farm.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        if UniversalMenu.Farm.E1:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+            CastSkillShot(_E, minion)
+        end
+
+        		
+        if UniversalMenu.Farm.E2:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastTargetSpell(minion,_E)
         end
-        if UniversalMenu.Farm.W:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+
+        		
+        if UniversalMenu.Farm.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+            CastSpell(_E)
+        end
+
+        		
+        
+
+
+
+
+
+        if UniversalMenu.Farm.W1:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+            CastSkillShot(_W, minion)
+        end
+
+        if UniversalMenu.Farm.W2:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastTargetSpell(minion,_W)
         end
+
+        if UniversalMenu.Farm.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+            CastSpell(_W)
+        end
+
+        
 			
 		
 	end   	
