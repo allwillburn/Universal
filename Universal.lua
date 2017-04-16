@@ -112,14 +112,26 @@ UniversalMenu:SubMenu("Harass", "Harass")
 UniversalMenu.Harass:Boolean("Q", "Use Q", true)
 
 UniversalMenu:SubMenu("KillSteal", "KillSteal")
-UniversalMenu.KillSteal:Boolean("Q", "KS w Q", true)
-UniversalMenu.KillSteal:Boolean("E", "KS w E", true)
-UniversalMenu.KillSteal:Boolean("R", "KS w R", true)
+UniversalMenu.KillSteal:Boolean("Q1", "KS w Q1", true)
+UniversalMenu.KillSteal:Boolean("Q2", "KS w Q2", true)
+UniversalMenu.KillSteal:Boolean("Q3", "KS w Q3", true)
+
+UniversalMenu.KillSteal:Boolean("W1", "KS w W1", true)
+UniversalMenu.KillSteal:Boolean("W2", "KS w W2", true)
+UniversalMenu.KillSteal:Boolean("W3", "KS w W3", true)
+
+UniversalMenu.KillSteal:Boolean("E1", "KS w E1", true)
+UniversalMenu.KillSteal:Boolean("E2", "KS w E2", true)
+UniversalMenu.KillSteal:Boolean("E3", "KS w E3", true)
+
+UniversalMenu.KillSteal:Boolean("R1", "KS w R1", true)
+UniversalMenu.KillSteal:Boolean("R2", "KS w R2", true)
+UniversalMenu.KillSteal:Boolean("R3", "KS w R3", true)
 
 UniversalMenu:SubMenu("AutoIgnite", "AutoIgnite")
 UniversalMenu.AutoIgnite:Boolean("Ignite", "Ignite if killable", true)
 
-UniversalMenu:SubMenu("1=tgt2=spel3=skl4=.pos", "1=tgt2=spel3=skl4=.pos")
+UniversalMenu:SubMenu("1=Skillshot 2=enemytarg 3=castspell 4=groundtarg", "1=Skillshot 2=enemytarg 3=castspell 4=groundtarg")
 
 
 
@@ -335,20 +347,63 @@ OnTick(function (myHero)
 
         for _, enemy in pairs(GetEnemyHeroes()) do
                 
-                if IsReady(_Q) and ValidTarget(enemy, QRange) and UniversalMenu.KillSteal.Q:Value() and GetHP(enemy) < getdmg("Q",enemy) then
-		         if target ~= nil then 
-                                      CastTargetSpell(target, _Q)
-		         end
+                if IsReady(_Q) and ValidTarget(enemy, QRange) and UniversalMenu.KillSteal.Q1:Value() and GetHP(enemy) < getdmg("Q",enemy) then		         
+                                      CastSkillShot(_Q, target)
+		         
                 end 
+			
+		if IsReady(_Q) and ValidTarget(enemy, QRange) and UniversalMenu.KillSteal.Q2:Value() and GetHP(enemy) < getdmg("Q",enemy) then		         
+                                     CastTargetSpell(target, _Q)
+		end 
+			
+		if IsReady(_Q) and ValidTarget(enemy, QRange) and UniversalMenu.KillSteal.Q3:Value() and GetHP(enemy) < getdmg("Q",enemy) then		         
+                                      CastTargetSpell(target, _Q)
+	        end 	
+			
+	
+			
+			
+		
+	        if IsReady(_W) and ValidTarget(enemy, WRange) and UniversalMenu.KillSteal.W1:Value() and GetHP(enemy) < getdmg("W",enemy) then		         
+                                      CastSkillShot(_W, target)
+		end 
+			
+                if IsReady(_W) and ValidTarget(enemy, WRange) and UniversalMenu.KillSteal.W2:Value() and GetHP(enemy) < getdmg("W",enemy) then		         
+                                      CastTargetSpell(target, _W)
+		end 
+			
+	        if IsReady(_W) and ValidTarget(enemy, WRange) and UniversalMenu.KillSteal.W3:Value() and GetHP(enemy) < getdmg("W",enemy) then		         
+                                      CastSpell(_W)
+		end 
+		
+		
+			
 
-                if IsReady(_E) and ValidTarget(enemy, ERange) and UniversalMenu.KillSteal.E:Value() and GetHP(enemy) < getdmg("E",enemy) then
-		                     CastTargetSpell(target,_E)
-  
+                if IsReady(_E) and ValidTarget(enemy, ERange) and UniversalMenu.KillSteal.E1:Value() and GetHP(enemy) < getdmg("E",enemy) then
+		                    CastSkillShot(_E, target)
                 end
 			
-		if IsReady(_R) and ValidTarget(enemy, RRange) and UniversalMenu.KillSteal.R:Value() and GetHP(enemy) < getdmg("R",enemy) then
-		                     CastTargetSpell(target, _R)
-  
+		if IsReady(_E) and ValidTarget(enemy, ERange) and UniversalMenu.KillSteal.E2:Value() and GetHP(enemy) < getdmg("E",enemy) then
+		                     CastTargetSpell(target,_E)
+                end
+			
+		if IsReady(_E) and ValidTarget(enemy, ERange) and UniversalMenu.KillSteal.E3:Value() and GetHP(enemy) < getdmg("E",enemy) then
+		                     CastSpell(_E)
+                end
+			
+			
+			
+			
+		if IsReady(_R) and ValidTarget(enemy, RRange) and UniversalMenu.KillSteal.R1:Value() and GetHP(enemy) < getdmg("R",enemy) then
+		                      CastSkillShot(_R, target)
+                end
+			
+		if IsReady(_R) and ValidTarget(enemy, RRange) and UniversalMenu.KillSteal.R2:Value() and GetHP(enemy) < getdmg("R",enemy) then
+		                     CastTargetSpell(target, _R)  
+                end
+			
+		if IsReady(_R) and ValidTarget(enemy, RRange) and UniversalMenu.KillSteal.R3:Value() and GetHP(enemy) < getdmg("R",enemy) then
+		                     CastSpell(_R)
                 end
       end
 
