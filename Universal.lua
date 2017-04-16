@@ -60,6 +60,7 @@ UniversalMenu.Combo:Boolean("Cutlass", "Use Cutlass", true)
 UniversalMenu.Combo:Boolean("Tiamat", "Use Tiamat", true)
 UniversalMenu.Combo:Boolean("BOTRK", "Use BOTRK", true)
 UniversalMenu.Combo:Boolean("RHydra", "Use RHydra", true)
+UniversalMenu.Combo:Boolean("THydra", "Use THydra", true)
 UniversalMenu.Combo:Boolean("YGB", "Use GhostBlade", true)
 UniversalMenu.Combo:Boolean("Gunblade", "Use Gunblade", true)
 UniversalMenu.Combo:Boolean("Randuins", "Use Randuins", true)
@@ -91,9 +92,17 @@ UniversalMenu.Farm:Boolean("Q1", "AutoQ3", true)
 
 
 UniversalMenu:SubMenu("LaneClear", "LaneClear")
-UniversalMenu.LaneClear:Boolean("Q", "Use Q", true)
-UniversalMenu.LaneClear:Boolean("W", "Use W", true)
-UniversalMenu.LaneClear:Boolean("E", "Use E", true)
+UniversalMenu.LaneClear:Boolean("Q1", "Use Q1", true)
+UniversalMenu.LaneClear:Boolean("Q2", "Use Q2", true)
+UniversalMenu.LaneClear:Boolean("Q3", "Use Q3", true)
+
+UniversalMenu.LaneClear:Boolean("W1", "Use W1", true)
+UniversalMenu.LaneClear:Boolean("W2", "Use W2", true)
+UniversalMenu.LaneClear:Boolean("W3", "Use W3", true)
+
+UniversalMenu.LaneClear:Boolean("E1", "Use E1", true)
+UniversalMenu.LaneClear:Boolean("E2", "Use E2", true)
+UniversalMenu.LaneClear:Boolean("E3", "Use E3", true)
 
 
 UniversalMenu.LaneClear:Boolean("RHydra", "Use RHydra", true)
@@ -125,6 +134,7 @@ OnTick(function (myHero)
 	local target = GetCurrentTarget()
         local YGB = GetItemSlot(myHero, 3142)
 	local RHydra = GetItemSlot(myHero, 3074)
+	local THydra = GetItemSlot(myHero, 3748)
 	local Tiamat = GetItemSlot(myHero, 3077)
         local Gunblade = GetItemSlot(myHero, 3146)
         local BOTRK = GetItemSlot(myHero, 3153)
@@ -183,6 +193,10 @@ OnTick(function (myHero)
             if UniversalMenu.Combo.RHydra:Value() and RHydra > 0 and Ready(RHydra) and ValidTarget(target, 400) then
 			CastSpell(RHydra)
             end
+			
+	    if UniversalMenu.Combo.THydra:Value() and THydra > 0 and Ready(THydra) and ValidTarget(target, 400) then
+			CastSpell(THydra)
+            end			
 
 
 
@@ -343,14 +357,49 @@ OnTick(function (myHero)
 
       if Mix:Mode() == "LaneClear" then
       	  for _,closeminion in pairs(minionManager.objects) do
-	        if UniversalMenu.LaneClear.Q:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
+	        if UniversalMenu.LaneClear.Q1:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
 	        	CastSkillShot(_Q, minion)
                 end
+				
+	        if UniversalMenu.LaneClear.Q1:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
+	        	CastTargetSpell(minion, _Q)
+                end
+				
+	        if UniversalMenu.LaneClear.Q1:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
+	        	CastSpell(_Q)
+                end	
+				
+				
+				
+			
+		if UniversalMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
+	        	CastSkillShot(_W, minion)
+	        end
+				
+		if UniversalMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
+	        	CastTargetSpell(minion, _W)
+	        end	
+				
+			if UniversalMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
+	        	CastSpell(_W)
+	        end	
+		
+				
 
 
                 if UniversalMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
+	        	CastSkillShot(_W, minion)
+	        end
+				
+		if UniversalMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
 	        	CastTargetSpell(minion, _E)
 	        end
+				
+	        if UniversalMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
+	        	CastSpell(_E)
+	        end
+	
+	
 
                 if UniversalMenu.LaneClear.Tiamat:Value() and ValidTarget(closeminion, 350) then
 			CastSpell(Tiamat)
