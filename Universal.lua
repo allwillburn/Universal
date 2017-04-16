@@ -1,4 +1,4 @@
-local ver = "0.08"
+local ver = "0.09"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -86,8 +86,8 @@ UniversalMenu.Farm:Boolean("W3", "AutoW3", true)
 
 
 UniversalMenu.Farm:Boolean("Q1", "AutoQ1", true)
-UniversalMenu.Farm:Boolean("Q1", "AutoQ2", true)
-UniversalMenu.Farm:Boolean("Q1", "AutoQ3", true)
+UniversalMenu.Farm:Boolean("Q2", "AutoQ2", true)
+UniversalMenu.Farm:Boolean("Q3", "AutoQ3", true)
 
 
 
