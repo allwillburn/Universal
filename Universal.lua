@@ -1,4 +1,4 @@
-local ver = "0.09"
+local ver = "0.10"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -416,41 +416,41 @@ OnTick(function (myHero)
 	        	CastSkillShot(_Q, minion)
                 end
 				
-	        if UniversalMenu.LaneClear.Q1:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
+	        if UniversalMenu.LaneClear.Q2:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
 	        	CastTargetSpell(minion, _Q)
                 end
 				
-	        if UniversalMenu.LaneClear.Q1:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
+	        if UniversalMenu.LaneClear.Q3:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
 	        	CastSpell(_Q)
                 end	
 				
 				
 				
 			
-		if UniversalMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
+		if UniversalMenu.LaneClear.W1:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
 	        	CastSkillShot(_W, minion)
 	        end
 				
-		if UniversalMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
+		if UniversalMenu.LaneClear.W2:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
 	        	CastTargetSpell(minion, _W)
 	        end	
 				
-			if UniversalMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
+			if UniversalMenu.LaneClear.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
 	        	CastSpell(_W)
 	        end	
 		
 				
 
 
-                if UniversalMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
+                if UniversalMenu.LaneClear.E1:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
 	        	CastSkillShot(_W, minion)
 	        end
 				
-		if UniversalMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
+		if UniversalMenu.LaneClear.E2:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
 	        	CastTargetSpell(minion, _E)
 	        end
 				
-	        if UniversalMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
+	        if UniversalMenu.LaneClear.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
 	        	CastSpell(_E)
 	        end
 	
