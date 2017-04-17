@@ -69,42 +69,60 @@ UniversalMenu.Combo:Boolean("Randuins", "Use Randuins", true)
 UniversalMenu:SubMenu("AutoMode", "AutoMode")
 UniversalMenu.AutoMode:Boolean("Level", "Auto level spells", false)
 UniversalMenu.AutoMode:Boolean("Ghost", "Auto Ghost", false)
-UniversalMenu.AutoMode:Boolean("Q", "Auto Q", false)
-UniversalMenu.AutoMode:Boolean("W", "Auto W", false)
-UniversalMenu.AutoMode:Boolean("E", "Auto E", false)
-UniversalMenu.AutoMode:Boolean("R", "Auto R", false)
+UniversalMenu.AutoMode:Boolean("Q1", "Auto Q", false)
+UniversalMenu.AutoMode:Boolean("Q2", "Auto Q", false)
+UniversalMenu.AutoMode:Boolean("Q3", "Auto Q", false)
+UniversalMenu.AutoMode:Boolean("Q4", "Auto Q", false)
+UniversalMenu.AutoMode:Boolean("", "", false)
+UniversalMenu.AutoMode:Boolean("W1", "Auto W", false)
+UniversalMenu.AutoMode:Boolean("W2", "Auto W", false)
+UniversalMenu.AutoMode:Boolean("W3", "Auto W", false)
+UniversalMenu.AutoMode:Boolean("W4", "Auto W", false)
+UniversalMenu.AutoMode:Boolean("", "", false)
+UniversalMenu.AutoMode:Boolean("E1", "Auto E1", false)
+UniversalMenu.AutoMode:Boolean("E2", "Auto E2", false)
+UniversalMenu.AutoMode:Boolean("E3", "Auto E3", false)
+UniversalMenu.AutoMode:Boolean("E4", "Auto E4", false)
+UniversalMenu.AutoMode:Boolean("", "", false)
+UniversalMenu.AutoMode:Boolean("R1", "Auto R1", false)
+UniversalMenu.AutoMode:Boolean("R2", "Auto R2", false)
+UniversalMenu.AutoMode:Boolean("R3", "Auto R3", false)
+UniversalMenu.AutoMode:Boolean("R4", "Auto R4", false)
 
-UniversalMenu:SubMenu("Farm", "Farm")
-UniversalMenu.Farm:Boolean("E1", "AutoE1", true)
-UniversalMenu.Farm:Boolean("E2", "AutoE2", true)
-UniversalMenu.Farm:Boolean("E3", "AutoE3", true)
+UniversalMenu:SubMenu("AutoFarm", "AutoFarm")
+UniversalMenu.AutoFarm:Boolean("Q1", "AutoQ1", true)
+UniversalMenu.AutoFarm:Boolean("Q2", "AutoQ2", true)
+UniversalMenu.AutoFarm:Boolean("Q3", "AutoQ3", true)
+UniversalMenu.AutoFarm:Boolean("Q4", "AutoQ4", true)
 
 
-UniversalMenu.Farm:Boolean("W1", "AutoW1", true)
-UniversalMenu.Farm:Boolean("W2", "AutoW2", true)
-UniversalMenu.Farm:Boolean("W3", "AutoW3", true)
+UniversalMenu.AutoFarm:Boolean("W1", "AutoW1", true)
+UniversalMenu.AutoFarm:Boolean("W2", "AutoW2", true)
+UniversalMenu.AutoFarm:Boolean("W3", "AutoW3", true)
+UniversalMenu.AutoFarm:Boolean("W4", "AutoW4", true)
 
 
-UniversalMenu.Farm:Boolean("Q1", "AutoQ1", true)
-UniversalMenu.Farm:Boolean("Q2", "AutoQ2", true)
-UniversalMenu.Farm:Boolean("Q3", "AutoQ3", true)
-
+UniversalMenu.AutoFarm:Boolean("E1", "AutoE1", true)
+UniversalMenu.AutoFarm:Boolean("E2", "AutoE2", true)
+UniversalMenu.AutoFarm:Boolean("E3", "AutoE3", true)
+UniversalMenu.AutoFarm:Boolean("E4", "AutoE4", true)
 
 
 UniversalMenu:SubMenu("LaneClear", "LaneClear")
 UniversalMenu.LaneClear:Boolean("Q1", "Use Q1", true)
 UniversalMenu.LaneClear:Boolean("Q2", "Use Q2", true)
 UniversalMenu.LaneClear:Boolean("Q3", "Use Q3", true)
+UniversalMenu.LaneClear:Boolean("Q4", "Use Q4", true)
 
 UniversalMenu.LaneClear:Boolean("W1", "Use W1", true)
 UniversalMenu.LaneClear:Boolean("W2", "Use W2", true)
 UniversalMenu.LaneClear:Boolean("W3", "Use W3", true)
+UniversalMenu.LaneClear:Boolean("W4", "Use W4", true)
 
 UniversalMenu.LaneClear:Boolean("E1", "Use E1", true)
 UniversalMenu.LaneClear:Boolean("E2", "Use E2", true)
 UniversalMenu.LaneClear:Boolean("E3", "Use E3", true)
-
-
+UniversalMenu.LaneClear:Boolean("E4", "Use E4", true)
 UniversalMenu.LaneClear:Boolean("RHydra", "Use RHydra", true)
 UniversalMenu.LaneClear:Boolean("Tiamat", "Use Tiamat", true)
 
@@ -115,18 +133,22 @@ UniversalMenu:SubMenu("KillSteal", "KillSteal")
 UniversalMenu.KillSteal:Boolean("Q1", "KS w Q1", true)
 UniversalMenu.KillSteal:Boolean("Q2", "KS w Q2", true)
 UniversalMenu.KillSteal:Boolean("Q3", "KS w Q3", true)
+UniversalMenu.KillSteal:Boolean("Q4", "KS w Q4", true)
 
 UniversalMenu.KillSteal:Boolean("W1", "KS w W1", true)
 UniversalMenu.KillSteal:Boolean("W2", "KS w W2", true)
 UniversalMenu.KillSteal:Boolean("W3", "KS w W3", true)
+UniversalMenu.KillSteal:Boolean("W4", "KS w W4", true)
 
 UniversalMenu.KillSteal:Boolean("E1", "KS w E1", true)
 UniversalMenu.KillSteal:Boolean("E2", "KS w E2", true)
 UniversalMenu.KillSteal:Boolean("E3", "KS w E3", true)
+UniversalMenu.KillSteal:Boolean("E4", "KS w E4", true)
 
 UniversalMenu.KillSteal:Boolean("R1", "KS w R1", true)
 UniversalMenu.KillSteal:Boolean("R2", "KS w R2", true)
 UniversalMenu.KillSteal:Boolean("R3", "KS w R3", true)
+UniversalMenu.KillSteal:Boolean("R4", "KS w R4", true)
 
 UniversalMenu:SubMenu("AutoIgnite", "AutoIgnite")
 UniversalMenu.AutoIgnite:Boolean("Ignite", "Ignite if killable", true)
@@ -360,6 +382,10 @@ OnTick(function (myHero)
                                       CastTargetSpell(target, _Q)
 	        end 	
 			
+		if IsReady(_Q) and ValidTarget(enemy, QRange) and UniversalMenu.KillSteal.Q4:Value() and GetHP(enemy) < getdmg("Q",enemy) then		         
+                                      CastSkillShot(_Q, target.pos)
+	        end 
+			
 	
 			
 			
@@ -374,6 +400,10 @@ OnTick(function (myHero)
 			
 	        if IsReady(_W) and ValidTarget(enemy, WRange) and UniversalMenu.KillSteal.W3:Value() and GetHP(enemy) < getdmg("W",enemy) then		         
                                       CastSpell(_W)
+		end 
+			
+			if IsReady(_W) and ValidTarget(enemy, WRange) and UniversalMenu.KillSteal.W4:Value() and GetHP(enemy) < getdmg("W",enemy) then		         
+                                      CastSkillShot(_W, target.pos)
 		end 
 		
 		
@@ -391,6 +421,10 @@ OnTick(function (myHero)
 		                     CastSpell(_E)
                 end
 			
+		if IsReady(_E) and ValidTarget(enemy, ERange) and UniversalMenu.KillSteal.E4:Value() and GetHP(enemy) < getdmg("E",enemy) then
+		                      CastSkillShot(_E, target.pos)
+                end
+			
 			
 			
 			
@@ -404,6 +438,10 @@ OnTick(function (myHero)
 			
 		if IsReady(_R) and ValidTarget(enemy, RRange) and UniversalMenu.KillSteal.R3:Value() and GetHP(enemy) < getdmg("R",enemy) then
 		                     CastSpell(_R)
+                end
+			
+		if IsReady(_R) and ValidTarget(enemy, RRange) and UniversalMenu.KillSteal.R4:Value() and GetHP(enemy) < getdmg("R",enemy) then
+		                     CastSkillShot(_R, target.pos)
                 end
       end
 
@@ -422,6 +460,10 @@ OnTick(function (myHero)
 				
 	        if UniversalMenu.LaneClear.Q3:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
 	        	CastSpell(_Q)
+                end
+				
+		if UniversalMenu.LaneClear.Q3:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
+	        	CastSkillShot(_Q, target.pos)
                 end	
 				
 				
@@ -435,15 +477,22 @@ OnTick(function (myHero)
 	        	CastTargetSpell(minion, _W)
 	        end	
 				
-			if UniversalMenu.LaneClear.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
+		if UniversalMenu.LaneClear.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
 	        	CastSpell(_W)
-	        end	
+	        end
+				
+		if UniversalMenu.LaneClear.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
+	        	CastSkillShot(_W, target.pos)
+	        end		
+				
+		
+				
 		
 				
 
 
                 if UniversalMenu.LaneClear.E1:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
-	        	CastSkillShot(_W, minion)
+	        	CastSkillShot(_E, minion)
 	        end
 				
 		if UniversalMenu.LaneClear.E2:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
@@ -453,6 +502,10 @@ OnTick(function (myHero)
 	        if UniversalMenu.LaneClear.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
 	        	CastSpell(_E)
 	        end
+				
+		if UniversalMenu.LaneClear.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
+	        	CastSkillShot(_E, target.pos)
+	        end	
 	
 	
 
@@ -469,23 +522,108 @@ OnTick(function (myHero)
 
 
         --AutoMode
-        if UniversalMenu.AutoMode.Q:Value() then        
+        if UniversalMenu.AutoMode.Q1:Value() then        
           if Ready(_Q) and ValidTarget(target, QRange) then
 		      CastSkillShot(_Q, target)
           end
         end 
-        if UniversalMenu.AutoMode.W:Value() then        
+		
+		if UniversalMenu.AutoMode.Q2:Value() then        
+          if Ready(_Q) and ValidTarget(target, QRange) then
+		      CastSkillShot(_Q, target)
+          end
+        end 
+		
+	if UniversalMenu.AutoMode.Q3:Value() then        
+          if Ready(_Q) and ValidTarget(target, QRange) then
+		      CastSkillShot(_Q, target)
+          end
+        end 
+		
+	if UniversalMenu.AutoMode.Q4:Value() then        
+          if Ready(_Q) and ValidTarget(target, QRange) then
+		      CastSkillShot(_Q, target)
+          end
+        end 
+		
+		
+		
+		
+        if UniversalMenu.AutoMode.W1:Value() then        
           if Ready(_W) and ValidTarget(target, WRange) then
 	  	      CastSkillShot(_W, target)
           end
         end
-        if UniversalMenu.AutoMode.E:Value() then        
+		
+	if UniversalMenu.AutoMode.W2:Value() then        
+          if Ready(_W) and ValidTarget(target, WRange) then
+	  	      CastSkillShot(_W, target)
+          end
+        end
+		
+	if UniversalMenu.AutoMode.W3:Value() then        
+          if Ready(_W) and ValidTarget(target, WRange) then
+	  	      CastSkillShot(_W, target)
+          end
+        end
+		
+	if UniversalMenu.AutoMode.W4:Value() then        
+          if Ready(_W) and ValidTarget(target, WRange) then
+	  	      CastSkillShot(_W, target)
+          end
+        end
+		
+		
+		
+		
+		
+		
+        if UniversalMenu.AutoMode.E1:Value() then        
 	  if Ready(_E) and ValidTarget(target, ERange) then
 		      CastTargetSpell(target,_E)
 	  end
         end
 		
-        if UniversalMenu.AutoMode.R:Value() then        
+	if UniversalMenu.AutoMode.E2:Value() then        
+	  if Ready(_E) and ValidTarget(target, ERange) then
+		      CastTargetSpell(target,_E)
+	  end
+        end
+		
+	if UniversalMenu.AutoMode.E3:Value() then        
+	  if Ready(_E) and ValidTarget(target, ERange) then
+		      CastTargetSpell(target,_E)
+	  end
+        end
+		
+	if UniversalMenu.AutoMode.E4:Value() then        
+	  if Ready(_E) and ValidTarget(target, ERange) then
+		      CastTargetSpell(target,_E)
+	  end
+        end
+		
+		
+		
+		
+        if UniversalMenu.AutoMode.R1:Value() then        
+	  if Ready(_R) and ValidTarget(target, RRange) then
+		     CastSpell(_R)
+	  end
+        end
+		
+	if UniversalMenu.AutoMode.R2:Value() then        
+	  if Ready(_R) and ValidTarget(target, RRange) then
+		     CastSpell(_R)
+	  end
+        end
+		
+	if UniversalMenu.AutoMode.R3:Value() then        
+	  if Ready(_R) and ValidTarget(target, RRange) then
+		     CastSpell(_R)
+	  end
+        end
+		
+	if UniversalMenu.AutoMode.R4:Value() then        
 	  if Ready(_R) and ValidTarget(target, RRange) then
 		     CastSpell(_R)
 	  end
