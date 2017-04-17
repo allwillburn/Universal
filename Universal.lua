@@ -1,4 +1,4 @@
-local ver = "0.11"
+local ver = "0.12"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -536,13 +536,13 @@ OnTick(function (myHero)
 		
 	if UniversalMenu.AutoMode.Q3:Value() then        
           if Ready(_Q) and ValidTarget(target, QRange) then
-		      CastSkillShot(_Q, target)
+		      CastSpell(_Q)
           end
         end 
 		
 	if UniversalMenu.AutoMode.Q4:Value() then        
           if Ready(_Q) and ValidTarget(target, QRange) then
-		      CastSkillShot(_Q, target)
+		     CastSkillShot(_Q, target.pos)
           end
         end 
 		
@@ -563,13 +563,13 @@ OnTick(function (myHero)
 		
 	if UniversalMenu.AutoMode.W3:Value() then        
           if Ready(_W) and ValidTarget(target, WRange) then
-	  	      CastSkillShot(_W, target)
+	  	      CastSpell(_W)
           end
         end
 		
 	if UniversalMenu.AutoMode.W4:Value() then        
           if Ready(_W) and ValidTarget(target, WRange) then
-	  	      CastSkillShot(_W, target)
+	  	     CastSkillShot(_W, target.pos)
           end
         end
 		
@@ -580,7 +580,7 @@ OnTick(function (myHero)
 		
         if UniversalMenu.AutoMode.E1:Value() then        
 	  if Ready(_E) and ValidTarget(target, ERange) then
-		      CastTargetSpell(target,_E)
+		      CastSkillShot(_E, target)
 	  end
         end
 		
@@ -592,13 +592,13 @@ OnTick(function (myHero)
 		
 	if UniversalMenu.AutoMode.E3:Value() then        
 	  if Ready(_E) and ValidTarget(target, ERange) then
-		      CastTargetSpell(target,_E)
+		      CastSpell(_E)
 	  end
         end
 		
 	if UniversalMenu.AutoMode.E4:Value() then        
 	  if Ready(_E) and ValidTarget(target, ERange) then
-		      CastTargetSpell(target,_E)
+		      CastSkillShot(_E, target.pos)
 	  end
         end
 		
@@ -607,13 +607,13 @@ OnTick(function (myHero)
 		
         if UniversalMenu.AutoMode.R1:Value() then        
 	  if Ready(_R) and ValidTarget(target, RRange) then
-		     CastSpell(_R)
+		     CastSkillShot(_R, target)
 	  end
         end
 		
 	if UniversalMenu.AutoMode.R2:Value() then        
 	  if Ready(_R) and ValidTarget(target, RRange) then
-		     CastSpell(_R)
+		     CastTargetSpell(target,_R)
 	  end
         end
 		
@@ -625,7 +625,7 @@ OnTick(function (myHero)
 		
 	if UniversalMenu.AutoMode.R4:Value() then        
 	  if Ready(_R) and ValidTarget(target, RRange) then
-		     CastSpell(_R)
+		     CastSkillShot(_R, target.pos)
 	  end
         end
                 
@@ -641,39 +641,49 @@ OnTick(function (myHero)
 
 
 
---Auto E on minions
+--Auto on minions
     for _, minion in pairs(minionManager.objects) do
 			
 			   	
-        if UniversalMenu.Farm.Q1:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
+        if UniversalMenu.AutoFarm.Q1:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
             CastSkillShot(_Q, minion)
         end
 
-        if UniversalMenu.Farm.Q2:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
+        if UniversalMenu.AutoFarm.Q2:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
              CastTargetSpell(minion, _Q)
         end
   
-        if UniversalMenu.Farm.Q3:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
+        if UniversalMenu.AutoFarm.Q3:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
             CastSpell(_Q)
         end
+		
+	if UniversalMenu.AutoFarm.Q4:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) and GetCurrentHP(minion) < CalcDamage(myHero,minion,QDmg,Q) then
+            CastSkillShot(_Q, target.pos)
+        end
+     	
      
 
     
 
 			
-        if UniversalMenu.Farm.E1:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        if UniversalMenu.AutoFarm.E1:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastSkillShot(_E, minion)
         end
 
         		
-        if UniversalMenu.Farm.E2:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        if UniversalMenu.AutoFarm.E2:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastTargetSpell(minion,_E)
         end
 
         		
-        if UniversalMenu.Farm.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        if UniversalMenu.AutoFarm.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastSpell(_E)
         end
+			
+	if UniversalMenu.AutoFarm.E4:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+            CastSkillShot(_E, target.pos)
+        end
+	
 
         		
         
@@ -682,17 +692,21 @@ OnTick(function (myHero)
 
 
 
-        if UniversalMenu.Farm.W1:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+        if UniversalMenu.AutoFarm.W1:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastSkillShot(_W, minion)
         end
 
-        if UniversalMenu.Farm.W2:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+        if UniversalMenu.AutoFarm.W2:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastTargetSpell(minion,_W)
         end
 
-        if UniversalMenu.Farm.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+        if UniversalMenu.AutoFarm.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastSpell(_W)
         end
+			
+	if UniversalMenu.AutoFarm.W4:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+            CastSkillShot(_W, target.pos)
+        end	
 
         
 			
