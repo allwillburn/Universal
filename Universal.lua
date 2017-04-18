@@ -1,4 +1,4 @@
-local ver = "0.12"
+local ver = "0.13"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -238,15 +238,15 @@ OnTick(function (myHero)
 			
 		
 	    
-            if UniversalMenu.Combo.E3:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
+            if UniversalMenu.Combo.E1:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastSkillShot(_E, target)
 	    end
 
-            if UniversalMenu.Combo.E1:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
+            if UniversalMenu.Combo.E2:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastTargetSpell(target,_E)
 	    end			
 	    
-            if UniversalMenu.Combo.E2:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
+            if UniversalMenu.Combo.E3:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 			CastSpell(_E)
 	    end			
 	    
