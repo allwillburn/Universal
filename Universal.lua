@@ -1,4 +1,4 @@
-local ver = "0.17"
+local ver = "0.18"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -168,10 +168,10 @@ UniversalMenu:SubMenu("AutoIgnite", "AutoIgnite")
 UniversalMenu.AutoIgnite:Boolean("Ignite", "Ignite if killable", true)
 
 UniversalMenu:SubMenu("UserGuide", "UserGuide")
-UniversalMenu.UserGuide("1", "set to 1 for skillshot")
-UniversalMenu.UserGuide("2", "set to 2 for enemy targeted spell")
-UniversalMenu.UserGuide("3", "set to 3 for self cast")
-UniversalMenu.UserGuide("4", "set to 4 for ground targeted spell ")
+UniversalMenu.UserGuide:Boolean("1", "set to 1 for skillshot")
+UniversalMenu.UserGuide:Boolean("2", "set to 2 for enemy targeted spell")
+UniversalMenu.UserGuide:Boolean("3", "set to 3 for self cast")
+UniversalMenu.UserGuide:Boolean("4", "set to 4 for ground targeted spell ")
 
 
 
