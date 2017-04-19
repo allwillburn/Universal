@@ -1,4 +1,4 @@
-local ver = "0.15"
+local ver = "0.16"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -99,7 +99,7 @@ UniversalMenu.AutoFarm:Boolean("Q1", "AutoQ1", true)
 UniversalMenu.AutoFarm:Boolean("Q2", "AutoQ2", true)
 UniversalMenu.AutoFarm:Boolean("Q3", "AutoQ3", true)
 UniversalMenu.AutoFarm:Boolean("Q4", "AutoQ4", true)
-UniversalMenu.AutoFarm("", "")
+UniversalMenu.AutoFarm:Boolean("", "")
 
 
 UniversalMenu.AutoFarm:Boolean("W1", "AutoW1", true)
