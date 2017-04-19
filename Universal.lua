@@ -1,4 +1,4 @@
-local ver = "0.16"
+local ver = "0.17"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -74,15 +74,15 @@ UniversalMenu.Combo:Boolean("Randuins", "Use Randuins", true)
 UniversalMenu:SubMenu("AutoMode", "AutoMode")
 UniversalMenu.AutoMode:Boolean("Level", "Auto level spells", false)
 UniversalMenu.AutoMode:Boolean("Ghost", "Auto Ghost", false)
-UniversalMenu.AutoMode:Boolean("Q1", "Auto Q", false)
-UniversalMenu.AutoMode:Boolean("Q2", "Auto Q", false)
-UniversalMenu.AutoMode:Boolean("Q3", "Auto Q", false)
-UniversalMenu.AutoMode:Boolean("Q4", "Auto Q", false)
+UniversalMenu.AutoMode:Boolean("Q1", "Auto Q1", false)
+UniversalMenu.AutoMode:Boolean("Q2", "Auto Q2", false)
+UniversalMenu.AutoMode:Boolean("Q3", "Auto Q3", false)
+UniversalMenu.AutoMode:Boolean("Q4", "Auto Q4", false)
 UniversalMenu.AutoMode:Boolean("", "")
-UniversalMenu.AutoMode:Boolean("W1", "Auto W", false)
-UniversalMenu.AutoMode:Boolean("W2", "Auto W", false)
-UniversalMenu.AutoMode:Boolean("W3", "Auto W", false)
-UniversalMenu.AutoMode:Boolean("W4", "Auto W", false)
+UniversalMenu.AutoMode:Boolean("W1", "Auto W1", false)
+UniversalMenu.AutoMode:Boolean("W2", "Auto W2", false)
+UniversalMenu.AutoMode:Boolean("W3", "Auto W3", false)
+UniversalMenu.AutoMode:Boolean("W4", "Auto W4", false)
 UniversalMenu.AutoMode:Boolean("", "")
 UniversalMenu.AutoMode:Boolean("E1", "Auto E1", false)
 UniversalMenu.AutoMode:Boolean("E2", "Auto E2", false)
