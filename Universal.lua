@@ -462,7 +462,7 @@ OnTick(function (myHero)
 	        	CastSpell(_Q)
                 end
 				
-		if UniversalMenu.LaneClear.Q3:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
+		if UniversalMenu.LaneClear.Q4:Value() and Ready(_Q) and ValidTarget(minion, GetCastRange(myHero,_Q)) then
 	        	CastSkillShot(_Q, target.pos)
                 end	
 				
@@ -481,7 +481,7 @@ OnTick(function (myHero)
 	        	CastSpell(_W)
 	        end
 				
-		if UniversalMenu.LaneClear.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
+		if UniversalMenu.LaneClear.W4:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) then
 	        	CastSkillShot(_W, target.pos)
 	        end		
 				
@@ -503,7 +503,7 @@ OnTick(function (myHero)
 	        	CastSpell(_E)
 	        end
 				
-		if UniversalMenu.LaneClear.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
+		if UniversalMenu.LaneClear.E4:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) then
 	        	CastSkillShot(_E, target.pos)
 	        end	
 	
