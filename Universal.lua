@@ -1,4 +1,4 @@
-local ver = "0.20"
+local ver = "0.21"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -35,28 +35,28 @@ local UniversalMenu = Menu("Universal", "Universal")
 
 UniversalMenu:SubMenu("Combo", "Combo")
 
-UniversalMenu.Combo:Boolean("Q1", "Use Q1 in combo", true)
-UniversalMenu.Combo:Boolean("Q2", "Use Q2 in combo", false)
-UniversalMenu.Combo:Boolean("Q3", "Use Q3 in combo", false)
-UniversalMenu.Combo:Boolean("Q4", "Use Q4 in combo", false)
+UniversalMenu.Combo:Boolean("Q1", "Use Q Skillshot", true)
+UniversalMenu.Combo:Boolean("Q2", "Use Q EnemyTarg", false)
+UniversalMenu.Combo:Boolean("Q3", "Use Q SelfCast", false)
+UniversalMenu.Combo:Boolean("Q4", "Use Q GroundTarg", false)
 UniversalMenu.Combo:Boolean("", "")
 
-UniversalMenu.Combo:Boolean("W1", "Use W1 in combo", true)
-UniversalMenu.Combo:Boolean("W2", "Use W2 in combo", false)
-UniversalMenu.Combo:Boolean("W3", "Use W3 in combo", false)
-UniversalMenu.Combo:Boolean("W4", "Use W4 in combo", false)
+UniversalMenu.Combo:Boolean("W1", "Use W Skillshot", true)
+UniversalMenu.Combo:Boolean("W2", "Use W EnemyTarg", false)
+UniversalMenu.Combo:Boolean("W3", "Use W SelfCast", false)
+UniversalMenu.Combo:Boolean("W4", "Use W GroundTarg", false)
 UniversalMenu.Combo:Boolean("", "")
 
-UniversalMenu.Combo:Boolean("E1", "Use E1 in combo", true)
-UniversalMenu.Combo:Boolean("E2", "Use E2 in combo", false)
-UniversalMenu.Combo:Boolean("E3", "Use E3 in combo", false)
-UniversalMenu.Combo:Boolean("E4", "Use E4 in combo", false)
+UniversalMenu.Combo:Boolean("E1", "Use E Skillshot", true)
+UniversalMenu.Combo:Boolean("E2", "Use E EnemyTarg", false)
+UniversalMenu.Combo:Boolean("E3", "Use E SelfCast", false)
+UniversalMenu.Combo:Boolean("E4", "Use E GroundTarg", false)
 UniversalMenu.Combo:Boolean("", "")
 
-UniversalMenu.Combo:Boolean("R1", "Use R1 in combo", true)
-UniversalMenu.Combo:Boolean("R2", "Use R2 in combo", false)
-UniversalMenu.Combo:Boolean("R3", "Use R3 in combo", false)
-UniversalMenu.Combo:Boolean("R4", "Use R4 in combo", false)
+UniversalMenu.Combo:Boolean("R1", "Use R Skillshot", true)
+UniversalMenu.Combo:Boolean("R2", "Use R EnemyTarg", false)
+UniversalMenu.Combo:Boolean("R3", "Use R SelfCast", false)
+UniversalMenu.Combo:Boolean("R4", "Use R GroundTarg", false)
 UniversalMenu.Combo:Boolean("", "")
 
 
