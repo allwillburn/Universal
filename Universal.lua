@@ -1,4 +1,4 @@
-local ver = "0.19"
+local ver = "0.20"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -539,25 +539,25 @@ OnTick(function (myHero)
 
         --AutoMode
         if UniversalMenu.AutoMode.Q1:Value() then        
-          if Ready(_Q) and ValidTarget(target, QRange) then
+          if Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 		      CastSkillShot(_Q, target)
           end
         end 
 		
 		if UniversalMenu.AutoMode.Q2:Value() then        
-          if Ready(_Q) and ValidTarget(target, QRange) then
+          if Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 		      CastSkillShot(_Q, target)
           end
         end 
 		
 	if UniversalMenu.AutoMode.Q3:Value() then        
-          if Ready(_Q) and ValidTarget(target, QRange) then
+          if Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 		      CastSpell(_Q)
           end
         end 
 		
 	if UniversalMenu.AutoMode.Q4:Value() then        
-          if Ready(_Q) and ValidTarget(target, QRange) then
+          if Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 		     CastSkillShot(_Q, target.pos)
           end
         end 
@@ -566,25 +566,25 @@ OnTick(function (myHero)
 		
 		
         if UniversalMenu.AutoMode.W1:Value() then        
-          if Ready(_W) and ValidTarget(target, WRange) then
+          if Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 	  	      CastSkillShot(_W, target)
           end
         end
 		
 	if UniversalMenu.AutoMode.W2:Value() then        
-          if Ready(_W) and ValidTarget(target, WRange) then
+          if Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 	  	      CastSkillShot(_W, target)
           end
         end
 		
 	if UniversalMenu.AutoMode.W3:Value() then        
-          if Ready(_W) and ValidTarget(target, WRange) then
+          if Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 	  	      CastSpell(_W)
           end
         end
 		
 	if UniversalMenu.AutoMode.W4:Value() then        
-          if Ready(_W) and ValidTarget(target, WRange) then
+          if Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 	  	     CastSkillShot(_W, target.pos)
           end
         end
@@ -595,25 +595,25 @@ OnTick(function (myHero)
 		
 		
         if UniversalMenu.AutoMode.E1:Value() then        
-	  if Ready(_E) and ValidTarget(target, ERange) then
+	  if Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 		      CastSkillShot(_E, target)
 	  end
         end
 		
 	if UniversalMenu.AutoMode.E2:Value() then        
-	  if Ready(_E) and ValidTarget(target, ERange) then
+	  if Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 		      CastTargetSpell(target,_E)
 	  end
         end
 		
 	if UniversalMenu.AutoMode.E3:Value() then        
-	  if Ready(_E) and ValidTarget(target, ERange) then
+	  if Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 		      CastSpell(_E)
 	  end
         end
 		
 	if UniversalMenu.AutoMode.E4:Value() then        
-	  if Ready(_E) and ValidTarget(target, ERange) then
+	  if Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 		      CastSkillShot(_E, target.pos)
 	  end
         end
@@ -622,25 +622,25 @@ OnTick(function (myHero)
 		
 		
         if UniversalMenu.AutoMode.R1:Value() then        
-	  if Ready(_R) and ValidTarget(target, RRange) then
+	  if Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 		     CastSkillShot(_R, target)
 	  end
         end
 		
 	if UniversalMenu.AutoMode.R2:Value() then        
-	  if Ready(_R) and ValidTarget(target, RRange) then
+	  if Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 		     CastTargetSpell(target,_R)
 	  end
         end
 		
 	if UniversalMenu.AutoMode.R3:Value() then        
-	  if Ready(_R) and ValidTarget(target, RRange) then
+	  if Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 		     CastSpell(_R)
 	  end
         end
 		
 	if UniversalMenu.AutoMode.R4:Value() then        
-	  if Ready(_R) and ValidTarget(target, RRange) then
+	  if Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 		     CastSkillShot(_R, target.pos)
 	  end
         end
