@@ -1,4 +1,4 @@
-local ver = "0.22"
+local ver = "0.24"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
