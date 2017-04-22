@@ -1,4 +1,4 @@
-local ver = "0.22"
+local ver = "0.23"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -132,7 +132,7 @@ UniversalMenu.LaneClear:Boolean("", "")
 UniversalMenu.LaneClear:Boolean("E1", "Use E Skillshot", true)
 UniversalMenu.LaneClear:Boolean("E2", "Use E EnemyTarg", false)
 UniversalMenu.LaneClear:Boolean("E3", "Use E SelfCast", false)
-UniversalMenu.LaneClear:Boolean("E4", "Use E4", false)
+UniversalMenu.LaneClear:Boolean("E4", "Use E GroundTarg", false)
 UniversalMenu.LaneClear:Boolean("RHydra", "Use RHydra", true)
 UniversalMenu.LaneClear:Boolean("Tiamat", "Use Tiamat", true)
 
