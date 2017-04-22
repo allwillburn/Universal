@@ -167,11 +167,6 @@ UniversalMenu.KillSteal:Boolean("R4", "Use R GroundTarg", false)
 UniversalMenu:SubMenu("AutoIgnite", "AutoIgnite")
 UniversalMenu.AutoIgnite:Boolean("Ignite", "Ignite if killable", true)
 
-UniversalMenu:SubMenu("UserGuide", "UserGuide")
-UniversalMenu.UserGuide:Boolean("1", "set skillshot")
-UniversalMenu.UserGuide:Boolean("2", "set enemytargeted")
-UniversalMenu.UserGuide:Boolean("3", "set selfcast")
-UniversalMenu.UserGuide:Boolean("4", "set groundtarg")
 
 
 
