@@ -173,7 +173,7 @@ UniversalMenu.AutoIgnite:Boolean("Ignite", "Ignite if killable", true)
 
 UniversalMenu:SubMenu("SkinChanger", "SkinChanger")
 UniversalMenu.SkinChanger:Boolean("Skin", "UseSkinChanger", true)
-UniversalMenu.SkinChanger:Slider("SelectedSkin", "Select A Skin:", 1, 0, 4, 1, function(SetDCP) HeroSkinChanger(myHero, SetDCP)  end, true)
+UniversalMenu.SkinChanger:Slider("SelectedSkin", "Select A Skin:", 1, 0, 5, 1, function(SetDCP) HeroSkinChanger(myHero, SetDCP)  end, true)
 
 OnTick(function (myHero)
 	local target = GetCurrentTarget()
@@ -340,7 +340,7 @@ OnTick(function (myHero)
 			CastSpell(_R) 
 	    end
 			
-	    if UniversalMenu.Combo.R4:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
+	    if UniversalMenu.Combo.R4:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) and (EnemiesAround(myHeroPos(), GetCastRange(myHero,_R)) >= UniversalMenu.Combo.RX:Value()) then
 			CastSkillShot(_R, target.pos)		
 	       end
            end
