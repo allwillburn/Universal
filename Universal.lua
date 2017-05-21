@@ -1,4 +1,4 @@
-local ver = "0.26"
+local ver = "0.27"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -69,6 +69,8 @@ UniversalMenu.Combo:Boolean("THydra", "Use THydra", true)
 UniversalMenu.Combo:Boolean("YGB", "Use GhostBlade", true)
 UniversalMenu.Combo:Boolean("Gunblade", "Use Gunblade", true)
 UniversalMenu.Combo:Boolean("Randuins", "Use Randuins", true)
+UniversalMenu.Combo:Boolean("Stoneplate", "Use Stoneplate", true)
+UniversalMenu.Combo:Slider("SX", "X Enemies to Cast Stoneplate",3,1,5,1)
 
 
 UniversalMenu:SubMenu("AutoMode", "AutoMode")
@@ -185,6 +187,7 @@ OnTick(function (myHero)
         local BOTRK = GetItemSlot(myHero, 3153)
         local Cutlass = GetItemSlot(myHero, 3144)
         local Randuins = GetItemSlot(myHero, 3143) 
+	local Stoneplate = GetItemSlot(myHero, 3193)
         local BonusAD = GetBonusDmg(myHero)
         local BaseAD = GetBaseDamage(myHero)
 	local BonusAP = GetBonusDmg(myHero)
@@ -218,6 +221,10 @@ OnTick(function (myHero)
             if UniversalMenu.Combo.Randuins:Value() and Randuins > 0 and Ready(Randuins) and ValidTarget(target, 500) then
 			CastSpell(Randuins)
             end
+			
+	    if UniversalMenu.Combo.Stoneplate:Value() and Stoneplate > 0 and Ready(Stoneplate) and ValidTarget(target, 500) and (EnemiesAround(myHeroPos(), 500) >= UniversalMenu.Combo.RS:Value()) then
+			CastSpell(Stoneplate)
+            end	
 
             if UniversalMenu.Combo.BOTRK:Value() and BOTRK > 0 and Ready(BOTRK) and ValidTarget(target, 550) then
 			 CastTargetSpell(target, BOTRK)
