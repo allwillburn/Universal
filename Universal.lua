@@ -1,4 +1,4 @@
-local ver = "0.27"
+local ver = "0.28"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -222,7 +222,7 @@ OnTick(function (myHero)
 			CastSpell(Randuins)
             end
 			
-	    if UniversalMenu.Combo.Stoneplate:Value() and Stoneplate > 0 and Ready(Stoneplate) and ValidTarget(target, 500) and (EnemiesAround(myHeroPos(), 500) >= UniversalMenu.Combo.RS:Value()) then
+	    if UniversalMenu.Combo.Stoneplate:Value() and Stoneplate > 0 and Ready(Stoneplate) and ValidTarget(target, 500) and (EnemiesAround(myHeroPos(), 500) >= UniversalMenu.Combo.SX:Value()) then
 			CastSpell(Stoneplate)
             end	
 
