@@ -680,21 +680,21 @@ OnTick(function (myHero)
     
 
 			
-        if UniversalMenu.AutoFarm.E1:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        if UniversalMenu.AutoFarm.E1:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastSkillShot(_E, minion)
         end
 
         		
-        if UniversalMenu.AutoFarm.E2:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        if UniversalMenu.AutoFarm.E2:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastTargetSpell(minion,_E)
         end
 
         		
-        if UniversalMenu.AutoFarm.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        if UniversalMenu.AutoFarm.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastSpell(_E)
         end
 			
-	if UniversalMenu.AutoFarm.E4:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+	if UniversalMenu.AutoFarm.E4:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastSkillShot(_E, target.pos)
         end
 	
@@ -706,19 +706,19 @@ OnTick(function (myHero)
 
 
 
-        if UniversalMenu.AutoFarm.W1:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+        if UniversalMenu.AutoFarm.W1:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastSkillShot(_W, minion)
         end
 
-        if UniversalMenu.AutoFarm.W2:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+        if UniversalMenu.AutoFarm.W2:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastTargetSpell(minion,_W)
         end
 
-        if UniversalMenu.AutoFarm.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+        if UniversalMenu.AutoFarm.W3:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastSpell(_W)
         end
 			
-	if UniversalMenu.AutoFarm.W4:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("W",minion) then 
+	if UniversalMenu.AutoFarm.W4:Value() and Ready(_W) and ValidTarget(minion, GetCastRange(myHero,_W)) and GetCurrentHP(minion) < getdmg("W",minion) then 
             CastSkillShot(_W, target.pos)
         end	
 
