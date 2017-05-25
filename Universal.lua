@@ -252,6 +252,7 @@ OnTick(function (myHero)
             elseif UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
 				if target ~= nil then
 			CastTargetSpell(target,_E)
+					end
 	    		
 	    
             elseif UniversalMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, GetCastRange(myHero,_E)) then
@@ -281,6 +282,7 @@ OnTick(function (myHero)
             elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
 				if target ~= nil then
                          CastTargetSpell(target, _Q)
+					end
 	    
 			
             		
@@ -307,6 +309,7 @@ OnTick(function (myHero)
             elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 					if target ~= nil then
 			CastTargetSpell(target, _W)
+					end
 	    
 			
 	           				    
@@ -332,6 +335,7 @@ OnTick(function (myHero)
             elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 						if target ~= nil then
 			CastTargetSpell(target, _R)
+					end
 	    		
 	    
             			
