@@ -279,13 +279,13 @@ OnTick(function (myHero)
             
             elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
                          CastTargetSpell(target, _Q)
-	    end
+	    
 			
             		
             
             elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
                          CastSpell(_Q)   
-	    end	
+	    
 			
             elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 			CastSkillShot(_Q, target.pos)	
