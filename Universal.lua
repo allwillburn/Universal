@@ -35,27 +35,20 @@ local UniversalMenu = Menu("Universal", "Universal")
 
 UniversalMenu:SubMenu("Combo", "Combo")
 
-UniversalMenu.Combo:Boolean("Q1", "Use Q Skillshot", true)
-UniversalMenu.Combo:Boolean("Q2", "Use Q EnemyTarg", false)
-UniversalMenu.Combo:Boolean("Q3", "Use Q SelfCast", false)
-UniversalMenu.Combo:Boolean("Q4", "Use Q GroundTarg", false)
+UniversalMenu.Combo:Boolean("Q", "Use Q ", true)
+
 UniversalMenu.Combo:Boolean("", "")
 
-UniversalMenu.Combo:Boolean("W1", "Use W Skillshot", true)
-UniversalMenu.Combo:Boolean("W2", "Use W EnemyTarg", false)
-UniversalMenu.Combo:Boolean("W3", "Use W SelfCast", false)
-UniversalMenu.Combo:Boolean("W4", "Use W GroundTarg", false)
+UniversalMenu.Combo:Boolean("W1", "Use W ", true)
+
 UniversalMenu.Combo:Boolean("", "")
 
 UniversalMenu.Combo:Boolean("E", "Use E ", true)
 
 UniversalMenu.Combo:Boolean("", "")
 
-UniversalMenu.Combo:Boolean("R1", "Use R Skillshot", true)
-UniversalMenu.Combo:Boolean("R2", "Use R EnemyTarg", false)
-UniversalMenu.Combo:Boolean("R3", "Use R SelfCast", false)
-UniversalMenu.Combo:Boolean("R4", "Use R GroundTarg", false)
-UniversalMenu.Combo:Boolean("", "")
+UniversalMenu.Combo:Boolean("R1", "Use R ", true)
+
 
 
 UniversalMenu.Combo:Slider("RX", "X Enemies to Cast R",3,1,5,1)
@@ -278,23 +271,23 @@ OnTick(function (myHero)
 
             
 
-            if UniversalMenu.Combo.Q1:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
+            if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 		     if target ~= nil then 
                          CastSkillShot(_Q, target)
                      end
-	    end			
+	    		
             
-            if UniversalMenu.Combo.Q2:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
+            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
                          CastTargetSpell(target, _Q)
 	    end
 			
             		
             
-            if UniversalMenu.Combo.Q3:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
+            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
                          CastSpell(_Q)   
 	    end	
 			
-            if UniversalMenu.Combo.Q4:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
+            elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
 			CastSkillShot(_Q, target.pos)	
 	    end			
 		
@@ -305,20 +298,20 @@ OnTick(function (myHero)
 		
 				
                
-            if UniversalMenu.Combo.W1:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+            if UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSkillShot(_W, target)
-	    end	
+	    
               
-            if UniversalMenu.Combo.W2:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+            elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastTargetSpell(target, _W)
-	    end
+	    
 			
 	           				    
-            if UniversalMenu.Combo.W3:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+            elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSpell(_W) 
-	    end
+	    
 			
-	    if UniversalMenu.Combo.W4:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
+	    elseif UniversalMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, GetCastRange(myHero,_W)) then
 			CastSkillShot(_W, target.pos)	
 	    end			
 	       
@@ -329,21 +322,21 @@ OnTick(function (myHero)
             
 	    
 	    	 
-	    if UniversalMenu.Combo.R1:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
+	    if UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastSkillShot(_R, target)
-	    end			
+	   			
 	    
-            if UniversalMenu.Combo.R2:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
+            elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastTargetSpell(target, _R)
-	    end			
+	    		
 	    
             			
 	    
-            if UniversalMenu.Combo.R3:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
+            elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) then
 			CastSpell(_R) 
-	    end
+	    
 			
-	    if UniversalMenu.Combo.R4:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) and (EnemiesAround(myHeroPos(), GetCastRange(myHero,_R)) >= UniversalMenu.Combo.RX:Value()) then
+	    if UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) and (EnemiesAround(myHeroPos(), GetCastRange(myHero,_R)) >= UniversalMenu.Combo.RX:Value()) then
 			CastSkillShot(_R, target.pos)		
 	       end
            end
