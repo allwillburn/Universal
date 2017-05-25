@@ -39,7 +39,7 @@ UniversalMenu.Combo:Boolean("Q", "Use Q ", true)
 
 UniversalMenu.Combo:Boolean("", "")
 
-UniversalMenu.Combo:Boolean("W1", "Use W ", true)
+UniversalMenu.Combo:Boolean("W", "Use W ", true)
 
 UniversalMenu.Combo:Boolean("", "")
 
@@ -47,7 +47,7 @@ UniversalMenu.Combo:Boolean("E", "Use E ", true)
 
 UniversalMenu.Combo:Boolean("", "")
 
-UniversalMenu.Combo:Boolean("R1", "Use R ", true)
+UniversalMenu.Combo:Boolean("R", "Use R ", true)
 
 
 
@@ -272,9 +272,9 @@ OnTick(function (myHero)
             
 
             if UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then
-		     if target ~= nil then 
+		     
                          CastSkillShot(_Q, target)
-                     end
+                     
 	    		
             
             elseif UniversalMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, GetCastRange(myHero,_Q)) then 
@@ -336,7 +336,7 @@ OnTick(function (myHero)
 			CastSpell(_R) 
 	    
 			
-	    if UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) and (EnemiesAround(myHeroPos(), GetCastRange(myHero,_R)) >= UniversalMenu.Combo.RX:Value()) then
+	    elseif UniversalMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, GetCastRange(myHero,_R)) and (EnemiesAround(myHeroPos(), GetCastRange(myHero,_R)) >= UniversalMenu.Combo.RX:Value()) then
 			CastSkillShot(_R, target.pos)		
 	       end
            end
