@@ -111,10 +111,8 @@ UniversalMenu.AutoFarm:Boolean("W4", "Use W GroundTarg", false)
 UniversalMenu.AutoFarm:Boolean("", "")
 
 
-UniversalMenu.AutoFarm:Boolean("E1", "Use E Skillshot", true)
-UniversalMenu.AutoFarm:Boolean("E2", "Use E EnemyTarg", false)
-UniversalMenu.AutoFarm:Boolean("E3", "Use E SelfCast", false)
-UniversalMenu.AutoFarm:Boolean("E4", "Use E GroundTarg", false)
+UniversalMenu.AutoFarm:Boolean("E", "Use E ", true)
+
 UniversalMenu.AutoFarm:Boolean("", "")
 
 
