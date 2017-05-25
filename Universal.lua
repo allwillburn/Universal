@@ -673,21 +673,21 @@ OnTick(function (myHero)
     
 
 			
-        if UniversalMenu.AutoFarm.E1:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        if UniversalMenu.AutoFarm.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastSkillShot(_E, minion)
-        end
+        
 
         		
-        if UniversalMenu.AutoFarm.E2:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        elseif UniversalMenu.AutoFarm.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastTargetSpell(minion,_E)
-        end
+        
 
         		
-        if UniversalMenu.AutoFarm.E3:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+        elseif UniversalMenu.AutoFarm.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastSpell(_E)
-        end
+        
 			
-	if UniversalMenu.AutoFarm.E4:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
+	elseif UniversalMenu.AutoFarm.E:Value() and Ready(_E) and ValidTarget(minion, GetCastRange(myHero,_E)) and GetCurrentHP(minion) < getdmg("E",minion) then 
             CastSkillShot(_E, target.pos)
         end
 	
