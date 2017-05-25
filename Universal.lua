@@ -47,10 +47,8 @@ UniversalMenu.Combo:Boolean("W3", "Use W SelfCast", false)
 UniversalMenu.Combo:Boolean("W4", "Use W GroundTarg", false)
 UniversalMenu.Combo:Boolean("", "")
 
-UniversalMenu.Combo:Boolean("E1", "Use E Skillshot", true)
-UniversalMenu.Combo:Boolean("E2", "Use E EnemyTarg", false)
-UniversalMenu.Combo:Boolean("E3", "Use E SelfCast", false)
-UniversalMenu.Combo:Boolean("E4", "Use E GroundTarg", false)
+UniversalMenu.Combo:Boolean("E", "Use E ", true)
+
 UniversalMenu.Combo:Boolean("", "")
 
 UniversalMenu.Combo:Boolean("R1", "Use R Skillshot", true)
